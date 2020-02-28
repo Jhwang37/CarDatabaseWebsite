@@ -61,6 +61,7 @@
     <p><strong>Year: </strong><span th:text="${car.carYear}"></span></p>
     <p><strong>Mileage: </strong><span th:text="${car.mileage}"></span></p>
     <p><strong>Price: </strong><span th:text="${car.MSRP}"></span></p>
+    <img style="height: 250px" class="img-fluid" th:src="${car.image}" alt="">
 
     <a href="/">
         <button type="button" class="btn btn-outline-primary">Show All Cars</button>

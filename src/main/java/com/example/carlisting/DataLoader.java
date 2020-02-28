@@ -45,7 +45,7 @@ public class DataLoader implements CommandLineRunner {
         carRepo.save(car);
         car = new Car("Lamborhini", "Aventador", "2017", "$611,234", "29,000", "https://res.cloudinary.com/dbebbnxw/image/upload/v1582922712/lambo_ba10ia.jpg");
         carRepo.save(car);
-        car = new Car("Acura", "RDX", "2017", "65,234", "29,000", "https://res.cloudinary.com/dbebbnxw/image/upload/v1582922954/acura_ai4ccj.webp");
+        car = new Car("Acura", "RDX", "2017", "$65,234", "29,000", "https://res.cloudinary.com/dbebbnxw/image/upload/v1582922954/acura_ai4ccj.webp");
         carRepo.save(car);
 
     }
