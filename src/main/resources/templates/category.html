@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+
+    <h1>CATEGORY LISTING</h1><br>
+    <div th:each="car : ${category.cars}">
+        <div th:text="${car.carMake}"></div>
+        <div th:text="${car.carModel}"></div>
+        <div th:text="${car.carYear}"></div>
+        <div th:text="${car.MSRP}"></div>
+        <div th:text="${car.mileage}"></div>
+        <br>
+
+    </div>
+
+</div>
+</body>
+</html>

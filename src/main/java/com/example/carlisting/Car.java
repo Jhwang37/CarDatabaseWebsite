@@ -33,8 +33,6 @@ public class Car {
         this.mileage = mileage;
         this.image = image;
         this.category = category;
-
-
     }
     public String getImage() {
         return image;

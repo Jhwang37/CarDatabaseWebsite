@@ -89,6 +89,9 @@
 <!--        </div>-->
 <!--</div>-->
 </div>
+<div th:each="category : ${categories}" style="display: inline-block;margin-left: 130px;size: 40px; ">
+    <a th:href="@{/category/{id}(id=${category.id})}"><button style="size: 40px;" type="button" class="btn btn-sm btn-outline-primary" th:text="${category.categoryname}"></button></a>
+</div>
 <div class="row" style="margin: 30px 30px;">
 
     <hr class="mt-2 mb-5">

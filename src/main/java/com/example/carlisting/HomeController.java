@@ -87,7 +87,7 @@ public class HomeController {
     public String category(@PathVariable("id") long id, Model model) {
         model.addAttribute("category", categoryRepo.findById(id).get());
         model.addAttribute("cars", carRepo.findAll());
-        return "index";
+        return "category";
     }
     @RequestMapping("/contact")
     public String contactPage(){
@@ -97,4 +97,5 @@ public class HomeController {
     public String aboutPage(){
         return "about";
     }
+
 }
