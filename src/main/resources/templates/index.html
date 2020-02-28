@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ad2f2dfe75.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<!-----NavigationBar---->
+<section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><img src=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<!---JumboTron-->
+<div class="jumbotron">
+    <h1 class="display-4" style="text-align: center;">Car Selling Made Easy</h1>
+    <p class="lead" style="text-align: center;">Search, Compare, Buy, Sell</p>
+    <hr class="my-4">
+    <p style="text-align: center;">Add car to sell</p>
+    <p class="lead" style="align-content: center; margin-bottom: 50px;">
+        <a class="btn btn-primary btn-lg" href="/addcar" role="button" style="float: left; margin-left: 39%; margin-bottom: 30px;">Add new Car</a>
+        <a class="btn btn-primary btn-lg" href="/addcategory" role="button" style="float: left;">Add new Category</a>
+    </p>
+</div>
+<!--<h1><a href="/addcategory">Add Category</a></h1>-->
+<!--<h1><a href="/addcar">Add Car</a></h1>-->
+<!--<br>-->
+
+
+<!--<div th:each="category: ${categories}">-->
+<!--    <h4 th:text="${category.categoryname}"></h4>-->
+<!--</div>-->
+<!--    <a class="change" th:href="@{/updatecategory/{id}(id=${category.id})}">Update</a>-->
+<!--    <a class="change" th:href="@{/deletecategory/{id}(id=${category.id})}">Delete</a>-->
+
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-lg-3 col-md-4 col-6">-->
+<!--            <div class="d-block mb-4 h-100">-->
+<!--    <ul th:each="car : ${cars}">-->
+<!--        <img style="height: 250px" class="img-fluid" th:src="${car.image}" alt="">-->
+<!--        <li th:text="${car.carMake}"></li>-->
+<!--        <li th:text="${car.carModel}"></li>-->
+<!--        <li th:text="${car.MSRP}"></li></p>-->
+<!--        <li th:text="${car.mileage}"></li>-->
+
+<!--        <a class="change" th:href="@{/update/{id}(id=${car.id})}">Update</a>-->
+<!--        <a class="change" th:href="@{/detail/{id}(id=${car.id})}">Details</a>-->
+<!--        <a class="change" th:href="@{/delete/{id}(id=${car.id})}">Delete</a>-->
+<!--    </ul>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--</div>-->
+</div>
+<div class="row" style="margin: 30px 30px;">
+
+    <hr class="mt-2 mb-5">
+
+    <div class="row text-center text-lg-left">
+
+        <div th:each="car : ${cars}" class="col-lg-3 col-md-4 col-6">
+
+            <div th:if="${car.image} !=null">
+                <div class="d-block mb-4 h-100">
+
+                    <img style="height: 250px" class="img-fluid" th:src="${car.image}" alt="">
+                    <h3><li th:text="${car.carMake}"></li></h3>
+                    <h3><li th:text="${car.carModel}"></li></h3>
+                    <div style="text-align: center;">
+                        Year: <li th:text="${car.carYear}"></li></p>
+                    MSRP: <li th:text="${car.MSRP}"></li></p>
+                    MILEAGE: <li th:text="${car.mileage}"></li>
+                    </div>
+                    <div style="text-align: center;">
+                    <a class="change" th:href="@{/update/{id}(id=${car.id})}">Update</a>
+                    <a class="change" th:href="@{/detail/{id}(id=${car.id})}">Details</a>
+                    <a class="change" th:href="@{/delete/{id}(id=${car.id})}">Delete</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="footer">
+    <div class="container text-center">
+        <p>Made by James Hwang</p>
+    </div>
+</section>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
+</body>
+</html>
